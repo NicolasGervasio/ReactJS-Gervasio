@@ -1,29 +1,22 @@
-const header = () => {
+import Navbar from "./Navbar"
+import Logo from "./Logo"
+
+const Header = () => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col">
-                    <img src="" alt="" />
+        <div className="bg-secondary-subtle ">
+            <div className="row p-3 mx-1">
+                <div className="col-2 d-flex justify-content-center">
+                    <Navbar />
                 </div>
-                <div className="col">
-                <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-  </li>
-</ul>
+                <div className="col-10">
+                    <Logo />
                 </div>
             </div>
+            <hr className="my-1" />
         </div>
 
     )
 
 }
+
+export default Header;
