@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
         <div><hr /></div>
         <div>
-          <p>Thot eCommerce. ©  2023</p>
+          <p className="text-center">Thot eCommerce. ©  2023</p>
         </div>
       </div>
     </div>
