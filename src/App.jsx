@@ -1,13 +1,15 @@
-import Header from "./components/Header";
-import Footer from "./components/footer"; 
+import Header from "./components/Header.jsx";
+import Footer from "./components/footer.jsx";
+import Carousel from "./components/Carousel.jsx";
 
 const App = () => {
-  return(
-    <div> 
+  return (
+    <div>
       <Header />
+      <Carousel />
       <Footer />
     </div>
-    )
+  )
 }
 
 
