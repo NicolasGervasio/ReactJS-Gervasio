@@ -6,8 +6,6 @@ const Footer = () => {
     backgroundColor: "#466FE0",
     color: "white",
     padding: "20px",
-    position: "fixed",
-    bottom: "0px",
     width: "100%",
   }
   return (
