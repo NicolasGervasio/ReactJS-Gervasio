@@ -5,9 +5,7 @@ import Trash from "../assets/basura-trash.png";
 
 const Cart = () => {
     const { cart, removeItem, clear, TotalDeProductos, SumaTotalDeProductos } = useContext(CartContext);
-    const StyleButton = {
-        backgroundColor: '#6495ED',
-    }
+
 
     if (TotalDeProductos() == 0) {
         return (
