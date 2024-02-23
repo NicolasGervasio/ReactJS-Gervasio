@@ -4,7 +4,7 @@ import Destacados from "./components/Destacados.jsx";
 import OcaImg from "./components/OcaImg.jsx";
 import Offers from "./components/Offers.jsx";
 import TorneoContenido from "./components/TorneoContenido.jsx";
-import Footer from "./components/footer.jsx";
+import Footer from "./components/Footer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import Error404 from "./components/Error404.jsx"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
