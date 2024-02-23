@@ -1,11 +1,19 @@
-import Carrito from "../assets/compra.png"
+import { useContext } from "react";
+import Carro from "../assets/compra.png";
+import { Link } from "react-router-dom";
+import { CartContext } from "./context/CartContext";
 
 const CartWidget = () => {
+    const { TotalDeProductos } = useContext(CartContext);
+    const StyleButton = {
+        backgroundColor: '#6495ED',
+    }
+
     return (
-        <button type="button" className="btn btn-danger position-relative">
-            <img src={Carrito} alt="carrito" />
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">1</span>
-        </button>
+        TotalDeProductos() > 0 ? <Link to={"/cart"} className="btn position-relative">
+            <img src={Carro} style={StyleButton} alt="Carrito" width={24} />
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{TotalDeProductos()}</span>
+        </Link> : ""
     )
 }
 

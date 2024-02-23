@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount = ({ stock }) => {
+
+const ItemCount = ({ stock, onAdd }) => {
     const [counter, setCounter] = useState(1)
-    const [itemStock, setItemStock] = useState(stock)
+    const [itemStock, setItemStock] = useState(stock);
+    const [itemAdded, setItemAdded] = useState(false);
 
     const incrementar = () => {
         if (counter < itemStock) {
@@ -20,15 +23,17 @@ const ItemCount = ({ stock }) => {
         setItemStock(stock)
     }, [stock]);
 
-    const onAdd = () => {
+    const addToCart = () => {
         if (counter < itemStock) {
             setItemStock(itemStock - counter)
-            console.log("Agregaste " + counter + " productos al carrito!")
+            setCounter(1);
+            onAdd(counter);
+            setItemAdded(true);
         }
     }
 
-    const StyleItemCount = {
-        backgroundColor: '#f18639',
+    const StyleButton = {
+        backgroundColor: '#6495ED',
     }
 
     return (
@@ -37,17 +42,15 @@ const ItemCount = ({ stock }) => {
             <div className="row">
                 <div className="col-md-12 d-flex justify-content-center">
                     <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" style={StyleItemCount} className="btn" onClick={decrementar}>-</button>
-                        <button type="button" style={StyleItemCount} className="btn">{counter}</button>
-                        <button type="button" style={StyleItemCount} className="btn" onClick={incrementar}>+</button>
+                        <button type="button" style={StyleButton} className="btn" onClick={decrementar}>-</button>
+                        <button type="button" style={StyleButton} className="btn">{counter}</button>
+                        <button type="button" style={StyleButton} className="btn" onClick={incrementar}>+</button>
                     </div>
                 </div>
             </div>
             <div className="row my-1 d-flex justify-content-center">
                 <div className="col-md-8">
-                    <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" style={StyleItemCount} className="btn" onClick={onAdd}>Agregar al carrito</button>
-                    </div>
+                        {itemAdded ? <Link to={"/cart"} type="button" style={StyleButton} className="btn">Terminar compra</Link> : <button type="button" style={StyleButton} className="btn" onClick={addToCart}>Agregar al carrito</button>}
                 </div>
             </div>
         </>
