@@ -38,5 +38,6 @@ const Navbar = () => {
         </div>
     )
 }
+<h1>hola</h1>
 
 export default Navbar;
